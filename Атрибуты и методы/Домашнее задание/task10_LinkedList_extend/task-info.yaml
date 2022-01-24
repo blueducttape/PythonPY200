@@ -1,0 +1,20 @@
+type: theory
+files:
+- name: main.py
+  visible: true
+  text: |
+    if __name__ == "__main__":
+        # Write your solution here
+        pass
+  learner_created: false
+- name: __init__.py
+  visible: false
+  learner_created: false
+- name: node.py
+  visible: true
+  learner_created: true
+status: Solved
+feedback:
+  time: Mon, 24 Jan 2022 17:53:11 UTC
+record: -1
+post_submission_on_open: true

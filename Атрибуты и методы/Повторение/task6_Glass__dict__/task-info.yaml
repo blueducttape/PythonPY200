@@ -1,0 +1,48 @@
+type: output
+files:
+- name: tests/output.txt
+  visible: false
+  text: |
+    {}
+    {'capacity_volume': 200, 'occupied_volume': 100}
+  learner_created: false
+- name: main.py
+  visible: true
+  placeholders:
+  - offset: 173
+    length: 159
+    placeholder_text: |-
+      self.capacity_volume = capacity_volume  # объем стакана
+              self.occupied_volume = occupied_volume  # объем жидкости в стакане
+    initial_state:
+      length: 130
+      offset: 144
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: |-
+      print(self.__dict__)
+              self.capacity_volume = capacity_volume  # объем стакана
+              self.occupied_volume = occupied_volume  # объем жидкости в стакане
+              print(self.__dict__)
+  text: |
+    from typing import Union
+
+
+    class Glass:
+        def __init__(self, capacity_volume: Union[int, float], occupied_volume: Union[int, float]):
+            self.capacity_volume = capacity_volume  # объем стакана
+            self.occupied_volume = occupied_volume  # объем жидкости в стакане
+
+
+    if __name__ == "__main__":
+        glass = Glass(200, 100)
+  learner_created: false
+- name: __init__.py
+  visible: false
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 30 Dec 2021 15:40:03 UTC
+record: -1
