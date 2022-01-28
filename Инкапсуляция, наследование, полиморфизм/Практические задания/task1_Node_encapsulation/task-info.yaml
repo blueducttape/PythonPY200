@@ -16,7 +16,7 @@ files:
       offset: 399
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: self.__next = None
   - offset: 520
     length: 124
@@ -27,7 +27,7 @@ files:
       offset: 520
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: f"Node({self.value}, {None})" if self.__next is None
       else f"Node({self.value}, Node({self.__next}))"
   - offset: 934
@@ -38,7 +38,7 @@ files:
       offset: 934
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: self.__next = next_
   text: |
     from typing import Any, Optional
@@ -84,5 +84,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 28 Jan 2022 13:18:53 UTC
 record: -1
