@@ -4,7 +4,7 @@ files:
   visible: true
   placeholders:
   - offset: 418
-    length: 88
+    length: 54
     placeholder_text: |-
       # TODO какой декоратор следует применить?
           def is_leap_year(self, year: int) -> bool:
@@ -12,59 +12,59 @@ files:
       length: 88
       offset: 418
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       @staticmethod
           def is_leap_year(year: int) -> bool:
-  - offset: 567
-    length: 54
+  - offset: 533
+    length: 41
     placeholder_text: '...  # TODO записать условие проверки високосного года'
     initial_state:
       length: 54
       offset: 567
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       leap_condition = ((year % 4) == 0 and (year % 100) != 0) or ((year % 400) == 0)
               return True if leap_condition else False
-  - offset: 771
-    length: 53
+  - offset: 724
+    length: 143
     placeholder_text: '...  # TODO вернуть количество дней указанного месяца'
     initial_state:
       length: 53
       offset: 771
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       year_months_index = 0 if not self.is_leap_year(year) else 1
               year_months = self.DAY_OF_MONTH[year_months_index]
 
               return year_months[month-1]
-  - offset: 957
-    length: 88
+  - offset: 1000
+    length: 650
     placeholder_text: '...  # TODO если указанный набор день, месяц и год неверны,
       то вызвать ошибку ValueError'
     initial_state:
       length: 88
       offset: 957
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       if day > self.get_max_day(month, year):
                   raise ValueError
-  - offset: 1051
-    length: 39
+  - offset: 1656
+    length: 128
     placeholder_text: '# TODO записать getter и setter для дня'
     initial_state:
       length: 39
       offset: 1051
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       @property
           def day(self) -> int:
@@ -77,15 +77,15 @@ files:
               if not 1 <= day <= 31:
                   raise ValueError
               self._day = day
-  - offset: 1096
-    length: 42
+  - offset: 1789
+    length: 137
     placeholder_text: '# TODO записать getter и setter для месяца'
     initial_state:
       length: 42
       offset: 1096
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       @property
           def month(self) -> int:
@@ -98,15 +98,15 @@ files:
               if not 1 <= month <= 12:
                   raise ValueError
               self._month = month
-  - offset: 1144
-    length: 40
+  - offset: 1932
+    length: 210
     placeholder_text: '# TODO записать getter и setter для года'
     initial_state:
       length: 40
       offset: 1144
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       @property
           def year(self) -> int:
@@ -160,6 +160,6 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1
 post_submission_on_open: true

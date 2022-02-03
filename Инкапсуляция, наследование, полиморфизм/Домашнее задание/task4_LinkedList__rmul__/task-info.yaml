@@ -10,14 +10,14 @@ files:
   visible: true
   placeholders:
   - offset: 2878
-    length: 47
+    length: 109
     placeholder_text: '...  # TODO определить правостороннее умножение'
     initial_state:
       length: 47
       offset: 2878
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: |-
       if not isinstance(other, int):
                   raise TypeError
@@ -175,5 +175,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 03 Feb 2022 18:53:20 UTC
 record: -1

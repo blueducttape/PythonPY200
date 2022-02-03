@@ -12,25 +12,63 @@ class Date:
 
         self.is_valid_date(self.day, self.month, self.year)
 
-    # TODO какой декоратор следует применить?
-    def is_leap_year(self, year: int) -> bool:
+    @staticmethod
+    def is_leap_year(year: int) -> bool:
         """Проверяет, является ли год високосным"""
-        ...  # TODO записать условие проверки високосного года
+        return True if (year % 4 == 0) else False
 
     def get_max_day(self, month: int, year: int) -> int:
         """Возвращает максимальное количество дней в месяце для указанного года"""
-        ...  # TODO вернуть количество дней указанного месяца
+        if self.is_leap_year(year):
+            return self.DAY_OF_MONTH[1][month - 1]
+        else:
+            return self.DAY_OF_MONTH[0][month - 1]
 
     def is_valid_date(self, day: int, month: int, year: int) -> None:
         """Проверяет, является ли дата корректной"""
-        ...  # TODO если указанный набор день, месяц и год неверны, то вызвать ошибку ValueError
+        if not (isinstance(day, int) & isinstance(month, int) & isinstance(year, int)):
+            raise TypeError('Вводите целочисленные значения')
+        if not ((1 <= day <= 31) & (1 <= month <= 12) & (year >= 0)):
+            raise ValueError('Превышен диапазон возможных значений!')
+        if not (day <= self.DAY_OF_MONTH[0][month - 1] or day <= self.DAY_OF_MONTH[1][month - 1]):
+            raise ValueError('Проверьте корректность введенных данных')
+        if self.get_max_day(month, year) < day:
+            raise ValueError('В этом месяце не может быть так много дней')
+        self.day = day
+        self.month = month
+        self.year = year
 
-    # TODO записать getter и setter для дня
+    @property
+    def day(self):
+        return self._day
 
-    # TODO записать getter и setter для месяца
+    @day.setter
+    def day(self, value: int):
+        self._day = value
 
-    # TODO записать getter и setter для года
+    @property
+    def month(self):
+        return self._month
+
+    @month.setter
+    def month(self, value: int):
+        self._month = value
+
+    @property
+    def year(self):
+        return self._year
+
+    @year.setter
+    def year(self, value: int):
+        self._year = value
+
+    def __str__(self):
+        return f'{self.day}.{self.month}.{self.year}'
 
 
 if __name__ == "__main__":
-    ...
+    date1 = Date(2, 2, 2022)
+    print(date1)
+
+    date2 = Date(20, 12, -2020)
+    print(date2)

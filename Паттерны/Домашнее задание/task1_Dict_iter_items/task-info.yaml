@@ -11,24 +11,24 @@ files:
   visible: true
   placeholders:
   - offset: 65
-    length: 41
+    length: 46
     placeholder_text: '...):  # TODO Наследование от класса dict'
     initial_state:
       length: 41
       offset: 65
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: 'dict):'
-  - offset: 111
-    length: 41
+  - offset: 116
+    length: 100
     placeholder_text: '...  # TODO переопределить метод __iter__'
     initial_state:
       length: 41
       offset: 111
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       def __iter__(self) -> Iterator[Tuple[Hashable, Any]]:
               return zip(self.keys(), self.values())
@@ -52,5 +52,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 03 Feb 2022 19:04:47 UTC
 record: -1

@@ -55,7 +55,7 @@ class Car:
         self.car_key = None  # ключ который хранится в машине, и сверяется с ключом водителя
         self.__keys_was_send = False  # переменная которая проверяет выдавались ли ключи
 
-    def __new__(cls, *args, **kwargs) -> object:   # новые объекты класса
+    def __new__(cls, *args, **kwargs) -> None:   # новые объекты класса
         cls.__append_new_car_counter()
         print(f"Создано {cls.__created_car} машин класса {cls.__name__}")
         return super().__new__(cls)
@@ -68,14 +68,17 @@ class Car:
         cls.brand = new_brand
 
     @classmethod
-    def _set_max_speed(cls, max_speed) -> int | float | Exception:  # установка максимальной скорости
+    def _set_max_speed(cls, max_speed) -> None:  # установка максимальной скорости
         if not isinstance(max_speed, (int, float)):
             raise TypeError(
                 f'Ожидается тип {int} или {float}, получен {type(max_speed)}')
         cls._max_speed = max_speed
 
     @classmethod
-    def __append_new_car_counter(cls) -> None:  # счетчик объектов класса
+    def __append_new_car_counter(cls) -> None:
+        """
+        счетчик объектов класса
+        """
         cls.__created_car += 1
 
     def start_engine(self, key) -> None:    # запуск двигателя
@@ -85,7 +88,10 @@ class Car:
         else:
             print('Крутится стартер')
 
-    def __is_ready_move(self) -> bool:  # проверяет готовность автомобиля к движению
+    def __is_ready_move(self) -> bool:
+        """
+        проверяет готовность автомобиля к движению
+        """
         if not self.__status_engine:
             raise EngineIsNotRunning("двигатель не запущен")
         if self.__driver is None:
@@ -115,7 +121,27 @@ class Car:
             print('Ключи не подходят')
             return False
 
-    def move(self, distance=10) -> str | Exception:     # движение автомобиля
+    def __check_limitations(self, m_time: [int, float], dist: int) -> None:
+        """
+        Проверка текущей поездки на ограничения водителя
+        :param m_time: время в пути в минутах
+        :param dist: пройденный путь в км
+        """
+        if self.driver.get_max_time_in_move() <= m_time:
+            print(f"Ограничение по времени прибывания за рулем! Срочно отдохните! "
+                  f"P.S. Ваше ограничение {self.driver.get_max_time_in_move() / 60} часа")
+        if self.driver.get_max_allowed_speed() > (dist / (m_time / 60)):
+            print(f"Вы превышаете максимально разрешенную скрость! "
+                  f"Ваше ограничение {self.driver.get_max_allowed_speed()} км/ч")
+        if self.driver.dist_limit % dist == 0:
+            print(f"Ограничение по пройденной дистанции без отдыха! Отдохните! "
+                  f"P.S. Ваше ограничение {self.driver.dist_limit} км")
+
+    def move(self, distance=10) -> None:
+        """
+        функция движения
+        :param distance: расстояние в км
+        """
         try:
             if self.__is_ready_move():
                 for i in range(distance):
@@ -140,7 +166,7 @@ class Car:
     # Статические методы
     # ==================
     @staticmethod
-    def move_direction(direction) -> dict:  # выбирает направление движения
+    def move_direction(direction) -> None:  # выбирает направление движения
         direction_dict = {0: "прямо", 1: "налево", 2: "направо", 3: "разворот"}
         print(f"Автомобиль выполняет движение: {direction_dict.get(direction, 'прямо')}")
 

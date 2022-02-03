@@ -12,14 +12,14 @@ files:
   visible: true
   placeholders:
   - offset: 2178
-    length: 30
+    length: 181
     placeholder_text: '# TODO определить метод __eq__'
     initial_state:
       length: 30
       offset: 2178
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       def __eq__(self, other: "LinkedList") -> bool:
               if not isinstance(other, LinkedList):
@@ -162,5 +162,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 03 Feb 2022 18:54:42 UTC
 record: -1

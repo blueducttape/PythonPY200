@@ -4,24 +4,24 @@ files:
   visible: true
   placeholders:
   - offset: 105
-    length: 27
+    length: 15
     placeholder_text: '# TODO задекорировать класс'
     initial_state:
       length: 27
       offset: 105
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: '@total_ordering'
-  - offset: 2577
-    length: 30
+  - offset: 2565
+    length: 311
     placeholder_text: '# TODO определить метод __lt__'
     initial_state:
       length: 30
       offset: 2577
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: |-
       def __lt__(self, other: "LinkedList") -> bool:
               if not isinstance(other, LinkedList):
@@ -180,6 +180,8 @@ files:
             self.is_valid(next_)
             self._next = next_
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  time: Thu, 03 Feb 2022 18:55:55 UTC
 record: -1
 post_submission_on_open: true

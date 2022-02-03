@@ -1,8 +1,10 @@
 from typing import Iterator, Tuple, Hashable, Any
 
 
-class MyDict(...):  # TODO Наследование от класса dict
-    ...  # TODO переопределить метод __iter__
+class MyDict(dict):
+    """Наследование от класса dict"""
+    def __iter__(self) -> Iterator[Tuple[Hashable, Any]]:
+        return zip(self.keys(), self.values())
 
 
 if __name__ == "__main__":
