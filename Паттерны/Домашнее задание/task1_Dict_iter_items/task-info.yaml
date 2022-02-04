@@ -11,7 +11,7 @@ files:
   visible: true
   placeholders:
   - offset: 65
-    length: 46
+    length: 44
     placeholder_text: '...):  # TODO Наследование от класса dict'
     initial_state:
       length: 41
@@ -20,7 +20,7 @@ files:
     selected: true
     status: Solved
     encrypted_possible_answer: 'dict):'
-  - offset: 116
+  - offset: 114
     length: 100
     placeholder_text: '...  # TODO переопределить метод __iter__'
     initial_state:

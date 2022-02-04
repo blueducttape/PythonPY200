@@ -100,7 +100,7 @@ files:
   visible: true
   placeholders:
   - offset: 56
-    length: 20
+    length: 19
     placeholder_text: '...):  # TODO наследоваться от unittest.TestCase'
     initial_state:
       length: 48
@@ -109,7 +109,7 @@ files:
     selected: true
     status: Solved
     encrypted_possible_answer: 'unittest.TestCase):'
-  - offset: 219
+  - offset: 218
     length: 146
     placeholder_text: '...  # TODO с помощью метода assertIsNone проверить следующий
       узел'
@@ -124,7 +124,7 @@ files:
 
               msg = "Значение следующего узла по умолчанию должно быть None"
               self.assertIsNone(node.next, msg)
-  - offset: 504
+  - offset: 503
     length: 213
     placeholder_text: '...  # TODO проверить что узлы связались'
     initial_state:
@@ -139,7 +139,7 @@ files:
 
               msg = "Значение следующего при инициализации некорректно"
               self.assertEqual(repr(left_node.next), repr(right_node), msg)
-  - offset: 848
+  - offset: 847
     length: 201
     placeholder_text: '...  # TODO проверить метод __repr__ без следующего узла'
     initial_state:
@@ -153,7 +153,7 @@ files:
 
               msg = "Значение представления __repr__ некорректно для узла без следующего узла. "
               self.assertEqual(repr(node), "Node(node_without_next, None)", msg)
-  - offset: 1053
+  - offset: 1052
     length: 46
     placeholder_text: '...  # TODO пропустить тест с помощью декоратора unittest.skip'
     initial_state:
@@ -163,7 +163,7 @@ files:
     selected: true
     status: Solved
     encrypted_possible_answer: '@unittest.skip("Тест пропущен по причине ...")'
-  - offset: 1475
+  - offset: 1474
     length: 40
     placeholder_text: '# TODO проверить строковое представление'
     initial_state:
@@ -173,7 +173,7 @@ files:
     selected: false
     status: Solved
     encrypted_possible_answer: self.assertEqual(str(node), str(some_value))
-  - offset: 1554
+  - offset: 1553
     length: 63
     placeholder_text: '...  # TODO проверить метод is_valid при корректных узлах'
     initial_state:
@@ -185,7 +185,7 @@ files:
     encrypted_possible_answer: |-
       Node.is_valid(None)
               Node.is_valid(Node("correct_node"))
-  - offset: 1627
+  - offset: 1626
     length: 79
     placeholder_text: '# TODO с помощью менеджера контакста и метода assertRaises
       проверить корректность вызываемой ошибки'
